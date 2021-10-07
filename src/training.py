@@ -11,9 +11,12 @@ def training(config_path):
     (X_train,y_train),(X_valid,y_valid),(X_test,y_test)=get_data(validation_datasize)
     NO_CLASSES=config["params"]["no_clasess"]
     OPTIMIZER=config["params"]["optimizer"]
-    print(OPTIMIZER)
     LOSS_FUNCTION=config["params"]["loss_function"]
     METRICS=config["params"]["metrics"]
+    #print(OPTIMIZER)
+    #print(NO_CLASSES)
+    #print(LOSS_FUNCTION)
+    #print(METRICS)
     model=create_model(LOSS_FUNCTION,OPTIMIZER,METRICS,NO_CLASSES)
 
     EPOCHS=config["params"]["epochs"]
@@ -27,3 +30,11 @@ if __name__=="__main__":
     args.add_argument("--config","-c",default="config.yaml")
     parsed_args = args.parse_args()
     training(config_path=parsed_args.config)
+
+
+if __name__ == '__main__':
+    args = argparse.ArgumentParser()
+
+    args.add_argument("--config", "-c", default="config.yaml")
+
+    parsed_args = args.parse_args()

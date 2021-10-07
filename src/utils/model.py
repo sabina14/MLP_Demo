@@ -10,8 +10,11 @@ def create_model(LOSS_FUNCTION,OPTIMIZER,METRICS,NO_CLASSES):
         tf.keras.layers.Dense(NO_CLASSES,activation="softmax",name="outputLayer")
   ]
   model_clf=tf.keras.models.Sequential(LAYERS)
-  print(model_clf.summary())
-  model_clf.compile(model_clf.compile(loss=LOSS_FUNCTION,optimizer=OPTIMIZER,metrics=METRICS))
+  model_clf.summary()
+  #print(LOSS_FUNCTION)
+  #print(OPTIMIZER)
+  #print(METRICS)
+  model_clf.compile(loss=LOSS_FUNCTION,optimizer= OPTIMIZER,metrics=METRICS)
   return model_clf
 
 
