@@ -4,3 +4,5 @@ pandas
 seaborn 
 tensorflow
 PyYAML
+tqdm
+##.e-c
